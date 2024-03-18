@@ -30,5 +30,4 @@ public class Beer {
     private List<String> food_pairing;
     private String brewers_tips;
     private String contributed_by;
-
 }
