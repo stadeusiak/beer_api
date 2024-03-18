@@ -3,6 +3,7 @@ package spring.sta.posting;
 import org.springframework.stereotype.Service;
 import spring.sta.dto.Beer;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +38,26 @@ public class PostingService {
 
     public void deleteById(Long id) {
         postingRepository.deleteById(id);
+    }
+
+    public List<Beer> getBeersByFirstBrewedAfter(String date) {
+        String[] parts = date.split("/");
+        int targetMonth = Integer.parseInt(parts[0]);
+        int targetYear = Integer.parseInt(parts[1]);
+
+        List<Beer> allBeers = postingRepository.findAll();
+        List<Beer> filteredBeers = new ArrayList<>();
+
+
+        for (Beer beer : allBeers) {
+            String[] beerParts = beer.getFirst_brewed().split("/");
+            int beerMonth = Integer.parseInt(beerParts[0]);
+            int beerYear = Integer.parseInt(beerParts[1]);
+
+            if (beerYear > targetYear || (beerYear == targetYear && beerMonth > targetMonth)) {
+                filteredBeers.add(beer);
+            }
+        }
+        return filteredBeers;
     }
 }

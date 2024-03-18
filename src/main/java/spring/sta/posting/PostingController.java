@@ -29,6 +29,11 @@ public class PostingController {
                 ()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/brewedAfter")
+    public List<Beer> getByFirstBrewedAfter(@RequestParam("date") String firstBrewedAfter) {
+        return postingService.getBeersByFirstBrewedAfter(firstBrewedAfter);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Beer add(@Valid @RequestBody Beer posting) {
