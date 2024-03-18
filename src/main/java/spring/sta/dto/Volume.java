@@ -1,9 +1,9 @@
-package spring.sta.posting.utils;
+package spring.sta.dto;
 
 import lombok.Data;
 
 @Data
-public class Temp {
+public class Volume {
 
     private double value;
     private String unit;

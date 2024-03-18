@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import spring.sta.posting.utils.Beer;
+import spring.sta.dto.Beer;
 
 import java.util.List;
 

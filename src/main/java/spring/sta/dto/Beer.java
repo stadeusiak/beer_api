@@ -1,4 +1,4 @@
-package spring.sta.posting.utils;
+package spring.sta.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

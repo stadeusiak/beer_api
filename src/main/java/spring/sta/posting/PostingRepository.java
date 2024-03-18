@@ -1,7 +1,7 @@
 package spring.sta.posting;
 
 import org.springframework.stereotype.Repository;
-import spring.sta.posting.utils.Beer;
+import spring.sta.dto.Beer;
 
 import java.util.List;
 import java.util.Map;
